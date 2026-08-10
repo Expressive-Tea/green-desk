@@ -1,0 +1,23 @@
+{
+  "name": "green-desk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A live mini trading desk \u2014 demo reel for the green-tea framework.",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "tsx src/main.ts"
+  },
+  "dependencies": {
+    "@green-tea/core": "26.8.0-beta.0",
+    "reflect-metadata": "0.2.2",
+    "ws": "^8.18.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  }
+}

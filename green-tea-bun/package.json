@@ -1,0 +1,15 @@
+{
+  "name": "green-desk-bun",
+  "version": "0.1.0",
+  "private": true,
+  "description": "green-desk running on Bun \u2014 same app, serveBun instead of app.listen.",
+  "scripts": {
+    "start": "bun run src/main.ts",
+    "dev": "bun --watch src/main.ts"
+  },
+  "dependencies": {
+    "@green-tea/core": "26.8.0-beta.0",
+    "reflect-metadata": "0.2.2",
+    "zod": "^3.24.0"
+  }
+}

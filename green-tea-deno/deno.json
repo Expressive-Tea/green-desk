@@ -1,0 +1,12 @@
+{
+  "nodeModulesDir": "auto",
+  "unstable": ["sloppy-imports"],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "tasks": {
+    "start": "deno run -A --unstable-sloppy-imports src/main.ts",
+    "dev": "deno run -A --watch --unstable-sloppy-imports src/main.ts"
+  }
+}

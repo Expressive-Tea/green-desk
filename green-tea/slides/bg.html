@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root{ --base:#0D1117; --panel:#161B22; --matcha:#5FB88A; --violet:#7C6CF0; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:100vw;height:100vh;overflow:hidden;background:var(--base)}
+  .stage{position:relative;width:100vw;height:100vh;
+    background:radial-gradient(130% 100% at 50% 40%, #1a212b 0%, var(--panel) 34%, var(--base) 74%, #090c10 100%);}
+  .glow{position:absolute;right:-8vmin;bottom:-10vmin;width:70vmin;height:70vmin;border-radius:50%;
+    background:radial-gradient(circle, rgba(95,184,138,.16) 0%, rgba(95,184,138,.05) 42%, transparent 66%);filter:blur(6px);}
+  .glow2{position:absolute;left:-14vmin;top:-14vmin;width:58vmin;height:58vmin;border-radius:50%;
+    background:radial-gradient(circle, rgba(124,108,240,.09) 0%, transparent 62%);filter:blur(8px);}
+  /* center halo — only meaningful on hero, seats a centered logo/title */
+  .halo{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:80vmin;height:60vmin;border-radius:50%;
+    background:radial-gradient(circle, rgba(95,184,138,.05) 0%, transparent 60%);opacity:0;}
+  .motif{position:absolute;right:2vmin;bottom:1vmin;width:58vmin;opacity:.20;}
+  .vig{position:absolute;inset:0;box-shadow:inset 0 0 34vmin 9vmin rgba(9,12,16,.55);pointer-events:none}
+  .vnode{fill:var(--violet)}
+  /* ---- HERO: more presence + center halo ---- */
+  body[data-v="hero"] .motif{width:72vmin;opacity:.24}
+  body[data-v="hero"] .halo{opacity:1}
+  body[data-v="hero"] .glow{width:80vmin;height:80vmin}
+  /* ---- CLOSING: motif rises from bottom-center, brighter focal violet ---- */
+  body[data-v="closing"] .motif{right:auto;left:50%;transform:translateX(-46%);width:86vmin;opacity:.22}
+  body[data-v="closing"] .glow{right:auto;left:50%;bottom:-16vmin;transform:translateX(-50%);width:96vmin;height:70vmin}
+  body[data-v="closing"] .glow2{opacity:.6}
+</style></head><body>
+<div class="stage">
+  <div class="glow2"></div><div class="glow"></div><div class="halo"></div>
+  <svg class="motif" viewBox="0 0 1000 760" fill="none">
+    <g stroke="var(--matcha)" stroke-width="2.6" opacity="0.95" stroke-linecap="round" fill="none">
+      <path d="M978 742 C840 656, 720 574, 612 470 C500 362, 372 250, 300 150"/>
+      <path d="M760 612 C820 556, 884 528, 968 512"/>
+      <path d="M612 470 C700 442, 786 448, 872 480"/>
+      <path d="M540 402 C486 340, 456 274, 452 196"/>
+      <path d="M420 300 C356 282, 300 288, 244 314"/>
+    </g>
+    <g>
+      <circle cx="968" cy="512" r="8" fill="var(--matcha)" opacity=".34"/>
+      <circle cx="872" cy="480" r="7" fill="var(--matcha)" opacity=".30"/>
+      <circle cx="452" cy="196" r="7" fill="var(--matcha)" opacity=".30"/>
+      <circle cx="244" cy="314" r="7" fill="var(--matcha)" opacity=".28"/>
+      <circle class="vhalo" cx="300" cy="150" r="22" class="vnode" fill="var(--violet)" opacity=".14"/>
+      <circle class="vdot" cx="300" cy="150" r="9" fill="var(--violet)" opacity=".65"/>
+    </g>
+  </svg>
+  <div class="vig"></div>
+</div>
+<script>
+  const v = new URLSearchParams(location.search).get('v') || 'divider';
+  document.body.dataset.v = v;
+  if (v === 'closing') { document.querySelector('.vdot').setAttribute('opacity','.85');
+    document.querySelector('.vhalo').setAttribute('opacity','.2'); }
+</script>
+</body></html>

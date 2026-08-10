@@ -1,0 +1,31 @@
+{
+  "version": "5",
+  "specifiers": {
+    "npm:@green-tea/core@26.8.0-beta.0": "26.8.0-beta.0",
+    "npm:reflect-metadata@0.2.2": "0.2.2",
+    "npm:zod@^3.24.0": "3.25.76"
+  },
+  "npm": {
+    "@green-tea/core@26.8.0-beta.0": {
+      "integrity": "sha512-eVGaBqmidGps8BwHrqhJ2D+oUCLtHcC0yc/CTwXePmviHuMdykXK/Z7SKEY1bV1hZrB0497gr+1YjZVkDR109A==",
+      "dependencies": [
+        "reflect-metadata"
+      ]
+    },
+    "reflect-metadata@0.2.2": {
+      "integrity": "sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q=="
+    },
+    "zod@3.25.76": {
+      "integrity": "sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ=="
+    }
+  },
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:@green-tea/core@26.8.0-beta.0",
+        "npm:reflect-metadata@0.2.2",
+        "npm:zod@^3.24.0"
+      ]
+    }
+  }
+}
